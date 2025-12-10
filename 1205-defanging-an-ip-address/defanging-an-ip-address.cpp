@@ -1,13 +1,17 @@
 class Solution {
 public:
     string defangIPaddr(string address) {
-        string res;
-        res.reserve(address.size()+6);
-        for(char i=0;i<address.length();i++){
-            if(address[i]=='.'){
-              res+="[.]";
+        string res="";
+        int index=0;
+        while(index<address.length()){
+            if(address[index]=='.'){
+                res+="[.]";
+                index++;
             }
-            else res+=address[i];
+            else{
+                res+=address[index];
+                index++;
+            }
         }
         return res;
     }

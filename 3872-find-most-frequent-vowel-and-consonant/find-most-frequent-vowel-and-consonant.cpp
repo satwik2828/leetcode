@@ -11,7 +11,6 @@ public:
             vc=max(vc,mp[ch]);
         }
         else{
-            cout<<ch<<" "<<mp[ch]<<" "<<cc<<endl;
             cc=max(cc,mp[ch]);
         }
      }

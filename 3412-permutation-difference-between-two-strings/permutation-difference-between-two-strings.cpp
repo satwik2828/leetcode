@@ -1,13 +1,13 @@
 class Solution {
 public:
     int findPermutationDifference(string s, string t) {
-        unordered_map<char,int>hm;
+        vector<int>hm(26);
         int sum=0;
         for(int i=0;i<s.length();i++){
-            hm[s[i]]=i;
+            hm[s[i]-'a']=i;
         }
         for(int i=0;i<t.length();i++){
-            sum+=abs(hm[t[i]]-i);
+            sum+=abs(hm[t[i]-'a']-i);
         }
         return sum;
     }

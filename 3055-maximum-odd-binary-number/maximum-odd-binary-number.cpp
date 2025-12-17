@@ -1,15 +1,19 @@
 class Solution {
 public:
     string maximumOddBinaryNumber(string s) {
-        int setcount=count(s.begin(),s.end(),'1');
-        string res="";
-            for(int i=0;i<setcount-1;i++){
-                res+='1';
+        int n=s.length(),i=0;
+        string res(n,'0');
+        for(char &ch : s){
+            if(ch=='1'){
+                if(res[n-1]=='1'){
+                    res[i]='1';
+                    i++;
+                }
+                else{
+                    res[n-1]='1';
+                }
             }
-            for(int i=setcount-1;i<s.length()-1;i++){
-                res+='0';
-            }
-            res+='1';
-            return res;
+        }
+        return res;
     }
 };

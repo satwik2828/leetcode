@@ -1,18 +1,12 @@
 class Solution {
 public:
-    string operation(string a){
-        string x;
-        for(int i=0;i<a.length()-1;i++){
-            int res=((a[i]-'0')+(a[i+1]-'0'))%10;
-            x.push_back(res+'0');
-        }
-        return x;
-    }
     bool hasSameDigits(string s) {
-        string st=s;
-     while(st.length()>2){
-        st=operation(st);
-     }   
-     return st[0]==st[1];
+        int n=s.length();
+        for(int i=0;i<n-2;i++){
+            for(int j=n-1;j>i;j--){
+                s[j]=((s[j]-'0')+(s[j-1]-'0'))%10 + '0';
+            }
+        }
+     return s[n-2]==s[n-1];
     }
 };

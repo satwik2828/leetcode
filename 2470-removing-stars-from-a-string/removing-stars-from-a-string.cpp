@@ -1,9 +1,9 @@
 class Solution {
 public:
     string removeStars(string s) {
-        string res;
+        string res="";
         for(char &ch:s){
-            if(ch!='*') res.push_back(ch);
+            if(ch!='*') res+=ch;
             else res.pop_back();
         }
         return res;

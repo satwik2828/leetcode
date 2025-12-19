@@ -6,7 +6,7 @@ public:
             ref[ch-'a']=1;
         }
         int count=0;
-        for(int i:ref){
+        for(int &i:ref){
             if(i==1) count++;
         }
         return count;

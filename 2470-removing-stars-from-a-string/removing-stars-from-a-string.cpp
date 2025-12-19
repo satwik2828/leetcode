@@ -2,7 +2,7 @@ class Solution {
 public:
     string removeStars(string s) {
         int pos=0;
-        for(char ch:s){
+        for(char &ch:s){
             if(ch=='*'){
                 pos--;
             }

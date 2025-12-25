@@ -6,8 +6,8 @@ public:
         sort(happiness.begin(),happiness.end());
         for(int i=0;i<k;i++){
             int val=happiness[n-i-1]-i;
-            if(val < 0) val=0;
-            sum+=val;
+            //if(val < 0) val=0;
+            sum+=max(0,val);
         }
         return sum;
     }

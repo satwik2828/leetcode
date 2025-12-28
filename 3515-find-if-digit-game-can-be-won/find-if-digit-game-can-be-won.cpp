@@ -6,7 +6,6 @@ public:
             if(floor(log10(nums[i])+1)==2) Double_sum+=nums[i];
             else Single_sum+=nums[i];
         }
-        cout<<Single_sum<<Double_sum;
         return Single_sum!=Double_sum;
     }
 };

@@ -6,7 +6,7 @@ public:
         for(int &i:nums){
             count[i]++;
         }
-        for(long i=0;i<count.size();i++){
+        for(int i=0;i<count.size();i++){
             if(count[i]==n) return i;
         }
         return -1;

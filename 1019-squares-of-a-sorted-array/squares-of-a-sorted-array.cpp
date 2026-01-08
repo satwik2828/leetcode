@@ -2,8 +2,8 @@ class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
        vector<int>ans(nums.size());
-       int l=0,r=nums.size()-1;
-       for(int i=nums.size()-1;i>=0;i--){
+       int l=0,r=nums.size()-1,n=nums.size();
+       for(int i=n-1;i>=0;i--){
         
         if(nums[l]<0) nums[l]=-nums[l];
         if(nums[r]<0) nums[r]=-nums[r];

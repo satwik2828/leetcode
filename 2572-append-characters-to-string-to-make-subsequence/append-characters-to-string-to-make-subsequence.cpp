@@ -11,6 +11,6 @@ public:
             i++;
         }
     }
-    return t.size()-j;
+    return t.length()-j;
     }
 };

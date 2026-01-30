@@ -4,12 +4,10 @@ public:
         sort(nums.begin(),nums.end());
         vector<int>ans;
         int n=nums.size();
-        for(int i=0;i<n-1;i++){
-            int k=nums[i]+1;
-            while(k!=nums[i+1]){
-                ans.push_back(k);
-                k++;
-            }
+        int a=nums[0],b=nums[n-1],j=1;
+        for(int i=a+1;i<=b;i++){
+            if(nums[j]!=i) ans.push_back(i);
+            else j++;
         }
         return ans;
     }

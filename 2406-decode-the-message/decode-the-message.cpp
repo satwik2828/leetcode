@@ -1,24 +1,15 @@
 class Solution {
 public:
     string decodeMessage(string key, string message) {
-        unordered_set<char>rd;
-        string s="",last="",res="";
-        for(char x : key){
-            if(rd.insert(x).second){
-            s+=x;
-            }
-        }
-        for(int i=0;i<s.length();i++){
-            if(s[i]!=' ') last+=s[i];
-        }
+        unordered_map<int,char>mp;
         char ch='a';
-        unordered_map<char,char>ref(last.length());
-        for(int i=0;i<last.length();i++){
-            ref[last[i]]=i+ch;
+        for(int i=0;i<key.length();i++){
+            if(key[i]!= ' ' && mp[key[i]-'a']==0)  mp[key[i]-'a']=ch++;
         }
-        for(char letter : message){
-            if(letter==' ') res+=' ';
-            else res+=ref[letter];
+        string res="";
+        for(char l : message){
+            if(l==' ') res+=' ';
+            else res+=mp[l-'a'];
         }
         return res;
     }

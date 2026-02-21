@@ -6,10 +6,10 @@ public:
         for(auto i:nums1) mp1[i]++;
         for(auto i:nums2) mp2[i]++;
         for(auto i:nums1){
-            if(mp2[i]>0) c1++;
+            if(mp2.count(i)>0) c1++;
         }
         for(auto i:nums2){
-            if(mp1[i]>0) c2++;
+            if(mp1.count(i)>0) c2++;
         }
         return {c1,c2};
     }

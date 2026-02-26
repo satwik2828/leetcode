@@ -9,7 +9,6 @@ public:
                 ref=ref^arr[j];
                 if(ref==0) sum+=j-i;
             }
-            cout<<sum<<endl;
         }
         return sum;
     }

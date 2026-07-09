@@ -7,7 +7,9 @@ public:
         vector<int>ans;
         for(int i=0;i<n;i++){
                 mp[nums[i]]++;
-        if(mp[nums[i]]>k && find(ans.begin(),ans.end(),nums[i])==ans.end()) ans.push_back(nums[i]);
+        }
+        for(auto i:mp){
+            if(i.second>k) ans.push_back(i.first);
         }
         return ans;
     }

@@ -1,11 +1,11 @@
 class Solution {
 public:
     vector<int> arrayRankTransform(vector<int>& arr) {
-        set<int>st(arr.begin(),arr.end());
-        unordered_map<int,int>mp;
+        map<int,int>mp;
+        for(int i:arr) mp[i];
         int k=1;
-        for(int i:st){
-            mp[i]=k;
+        for(auto &i:mp){
+            i.second=k;
             k++;
         }
         vector<int>ans;

@@ -8,7 +8,6 @@ public:
             if(i=='L') l++;
             if(i=='R') l--;
         }
-       if(l==0 and u==0) return true;
-       else return false;
+    return l==0 and u==0;
     }
 };

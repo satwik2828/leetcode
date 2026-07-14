@@ -1,35 +1,12 @@
 class Solution {
 public:
-    int first(vector<int>nums,int target){
-      int l=0,h=nums.size()-1,ans=-1;
-        while(l<=h){
-            int m=l+(h-l)/2;
-            if(nums[m]==target){
-                ans=m;
-                h=m-1;
-            }
-            else if(nums[m]<target) l=m+1;
-            else h=m-1;
-        }  
-        return ans;
-    }
-    int last(vector<int>nums,int target){
-      int l=0,h=nums.size()-1,ans=-1;
-        while(l<=h){
-            int m=l+(h-l)/2;
-            if(nums[m]==target){
-                ans=m;
-                l=m+1;
-            }
-            else if(nums[m]<target) l=m+1;
-            else h=m-1;
-        }  
-        return ans;
-    }
     vector<int> searchRange(vector<int>& nums, int target) {
         vector<int>ans(2,-1);
-       ans[0]=first(nums,target);
-       ans[1]=last(nums,target);
+       auto it1=lower_bound(nums.begin(),nums.end(),target);
+       if(it1==nums.end() or *it1!=target) return ans;
+       auto it2=upper_bound(nums.begin(),nums.end(),target);
+        ans[0]=it1-nums.begin();
+        ans[1]=prev(it2)-nums.begin();
         return ans;
     }
 };

@@ -3,14 +3,25 @@ public:
     vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
        int m=grid.size();
        int n=grid[0].size();
-       vector<vector<int>>ans(m,vector<int>(n,0));
+       vector<int>temp;
        for(int i=0;i<m;i++)
        {
         for(int j=0;j<n;j++){
-            int l=(i+(j+k)/n)%m,t=(j+k)%n;
-        ans[l][t]=grid[i][j];
+           temp.push_back(grid[i][j]);
         }
        } 
-       return ans;
+        k=k%(m*n);
+        reverse(temp.begin(),temp.end());
+        reverse(temp.begin(),temp.begin()+k);
+        reverse(temp.begin()+k,temp.end());
+        int l=0;
+         for(int i=0;i<m;i++)
+       {
+        for(int j=0;j<n;j++){
+           grid[i][j]=temp[l];
+           l++;
+        }
+       } 
+       return grid;
     }
 };

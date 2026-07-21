@@ -24,7 +24,6 @@ public:
         for(int i=0;i<a.size()-1;i++){
             c=max(c,a[i]+a[i+1]);
         }
-        cout<<c<<" "<<s_count;
         return s_count+c;
     }
 };

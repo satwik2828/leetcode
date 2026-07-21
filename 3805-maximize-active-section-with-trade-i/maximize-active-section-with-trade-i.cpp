@@ -12,11 +12,9 @@ public:
             if(s[i]=='0'){
                 count++;
             }
-            else{
-                if(count>0){
+            else if(count>0){
                 a.push_back(count);
                 count=0;
-                }
             }
         }
         if(count>0) a.push_back(count);

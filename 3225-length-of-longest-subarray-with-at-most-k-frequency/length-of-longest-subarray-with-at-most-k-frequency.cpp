@@ -8,7 +8,7 @@ public:
             mp[nums[i]]++;
             if(mp[nums[i]]<=k){
                 count++;
-                 max_len=max(max_len,count);
+                //max_len=max(max_len,count);
             }
             else{
                 while(mp[nums[i]]>k){

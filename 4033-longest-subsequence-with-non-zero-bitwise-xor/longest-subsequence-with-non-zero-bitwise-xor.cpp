@@ -1,15 +1,12 @@
 class Solution {
 public:
     int longestSubsequence(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        int max_len=0,x=0,count=0;
+        int x=0,count=0,flag=0,n=nums.size();
         for(int i:nums){
             x^=i;
-            count++;
-            if(x!=0) max_len=max(max_len,count);
-           // cout<<count<<" "<<max_len<<" "<<x<<endl;
+            if(i) flag=1;
         }
-       // max_len=max(max_len,count);
-        return max_len;
+        if(!flag) return 0;
+        return x?n:n-1;
     }
 };

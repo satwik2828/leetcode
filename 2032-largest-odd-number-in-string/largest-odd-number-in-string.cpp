@@ -3,9 +3,12 @@ public:
     string largestOddNumber(string num) {
     string ans;
     int n=num.size(),idx=-1;
-    for(int i=0;i<n;i++){
+    for(int i=n-1;i>=0;i--){
         int k=num[i]-'0';
-        if(k&1) idx=i;
+        if(k&1){
+            idx=i;
+            break;
+        }
     }
     ans=num.substr(0,idx+1);
     return ans;

@@ -7,7 +7,7 @@ public:
         int k=num[i]-'0';
         if(k&1) idx=i;
     }
-    ans+=num.substr(0,idx+1);
+    ans=num.substr(0,idx+1);
     return ans;
     }
 };

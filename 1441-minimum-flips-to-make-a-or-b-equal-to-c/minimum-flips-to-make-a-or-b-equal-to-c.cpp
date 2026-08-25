@@ -13,7 +13,7 @@ public:
         a=a>>1;
         b=b>>1; 
         maxi=maxi>>1;
-        cout<<ans<<endl;
+        // cout<<ans<<endl;
       }  
       return ans;
     }

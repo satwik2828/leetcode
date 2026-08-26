@@ -19,7 +19,7 @@ public:
             if(primes[i]) ref.push_back(i);
         }
         int x=-1,y=-1;
-        if(ref.empty()) return {x,y};
+        if(ref.size()<2) return {x,y};
         for(int i=0;i<ref.size()-1;i++){
             if(ref[i+1]-ref[i]<mini){
                 mini=ref[i+1]-ref[i];

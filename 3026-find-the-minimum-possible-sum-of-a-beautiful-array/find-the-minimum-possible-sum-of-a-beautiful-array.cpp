@@ -9,7 +9,7 @@ public:
         cout<<k<<endl;
         int m=n-k+1;
         cout<<m<<" "<<sum<<endl;
-        sum+=((target%a)*m%a)%a+((m%a*(m%a-1))%a*(500000004%a))%a;
+        sum+=(1ll*(1ll*target*2+(m-1))*m/2)%a;
         // cout<<(m%a*(m%a-1)/2)%a<<endl;
         return sum%(a);
     }

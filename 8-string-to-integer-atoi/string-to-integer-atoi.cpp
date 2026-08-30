@@ -10,11 +10,11 @@ public:
             if(s[i]=='.') break;
             if(s[i]=='+' && flag!=1) {
                 pcount++;
-                if(i<n && s[i+1]==' ') return 0; 
+                if(i<n-1 && s[i+1]==' ') return 0; 
             }
             if(s[i]=='-' && flag!=1) {
                 ncount++;
-                if(i<n && s[i+1]==' ') return 0; 
+                if(i<n-1 && s[i+1]==' ') return 0; 
             }
             if(isdigit(s[i])){
                 flag=1;
@@ -26,7 +26,7 @@ public:
             }
             i++;
         }
-        cout<<number<<" "<<pcount<<" "<<ncount<<endl;
+        // cout<<number<<" "<<pcount<<" "<<ncount<<endl;
         int f=0;
         if(ncount==1 && pcount==0) {
             sign='-';
@@ -42,7 +42,7 @@ public:
             t++;
         }
         int l=number.size()-t;
-        cout<<l<<endl;
+        // cout<<l<<endl;
         if(sign=='+' && l>10) return INT_MAX;
         if(sign=='-'&& l>10) return INT_MIN;
         long long ans=0;
@@ -51,7 +51,7 @@ public:
             ans+=(number[i]-'0')*k;
             k*=10;
         }
-        cout<<ans;
+        // cout<<ans;
         if(sign=='+' && ans>=INT_MAX) ans=INT_MAX;
         if(sign=='-' && -ans<=INT_MIN) ans=INT_MIN;
         if(sign=='-') ans*=-1;

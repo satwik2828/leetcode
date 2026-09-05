@@ -14,7 +14,7 @@ public:
         }
         reverse(Min.begin(),Min.end());
         for(int i=0;i<n;i++){
-            maxi=max(maxi,nums[i]);
+            if(maxi<nums[i]) maxi=nums[i];
             if(maxi-Min[i]<=k) {
                 idx=i;
                 break;

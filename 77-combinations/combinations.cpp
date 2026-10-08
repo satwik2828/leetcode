@@ -1,6 +1,7 @@
 class Solution {
 public:
     void rec(int i,int &k,vector<int>&arr,vector<int>&a,vector<vector<int>>&ans){
+        if(a.size()>k) return;
         if(i==arr.size()){
             if(a.size()==k && !a.empty())ans.push_back(a);
             return;
